@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:webproject2="http://www.netbeans.org/ns/web-project/2" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSGEN SECTION
+                ===================
+            -->
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <property name="j2ee.platform.wsimport.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${java.home}/../lib/tools.jar:${j2ee.platform.wsimport.classpath}:${javac.classpath}"/>
+        </taskdef>
+        <condition property="conf-dir" value="${conf.dir}/" else="">
+            <isset property="conf.dir"/>
+        </condition>
+    </target>
+    <target name="wsimport-client-Add" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Add"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Add" destdir="${build.generated.dir}/jax-wsCache/Add" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Add/wsdl/localhost_8080/BankServer/Add.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/BankServer/Add?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Add/wsdl/localhost_8080/BankServer/Add.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Add"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Add">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Add" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/add"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Add"/>
+    </target>
+    <target name="wsimport-client-Withdraw" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Withdraw"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Withdraw" destdir="${build.generated.dir}/jax-wsCache/Withdraw" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Withdraw/wsdl/localhost_8080/BankServer/Withdraw.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/BankServer/Withdraw?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Withdraw/wsdl/localhost_8080/BankServer/Withdraw.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Withdraw"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Withdraw">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Withdraw" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/withdraw"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Withdraw"/>
+    </target>
+    <target name="wsimport-client-Transfer" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/Transfer"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/Transfer" destdir="${build.generated.dir}/jax-wsCache/Transfer" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/Transfer/wsdl/localhost_8080/BankServer/Transfer.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/BankServer/Transfer?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/Transfer/wsdl/localhost_8080/BankServer/Transfer.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/Transfer"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/Transfer">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-Transfer" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/transfer"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/Transfer"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-Add, wsimport-client-Withdraw, wsimport-client-Transfer"/>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/BankServer/Add?WSDL" uri="wsdl/localhost_8080/BankServer/Add.wsdl"/>
+    <system systemId="http://localhost:8080/BankServer/Add?xsd=1" uri="wsdl/localhost_8080/BankServer/Add.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/BankServer/Withdraw?WSDL" uri="wsdl/localhost_8080/BankServer/Withdraw.wsdl"/>
+    <system systemId="http://localhost:8080/BankServer/Withdraw?xsd=1" uri="wsdl/localhost_8080/BankServer/Withdraw.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/BankServer/Transfer?WSDL" uri="wsdl/localhost_8080/BankServer/Transfer.wsdl"/>
+    <system systemId="http://localhost:8080/BankServer/Transfer?xsd=1" uri="wsdl/localhost_8080/BankServer/Transfer.xsd_1.xsd"/>
+</catalog>
